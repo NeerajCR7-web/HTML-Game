@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 600px;
+}
+
+h1 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.target-color {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 5px solid #333;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.color-option {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.color-option .front,
+.color-option .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the face that's not currently visible */
+  border-radius: 10px;
+  transition: transform 0.6s;
+}
+
+.color-option .front {
+  background-color: #333; /* Back of the card */
+}
+
+.color-option .back {
+  transform: rotateY(180deg); /* Initially rotates the back face, so it's not visible */
+}
+
+.color-option.flipped .front {
+  transform: rotateY(180deg); /* Rotates the front face to hide it when the card is flipped */
+}
+
+.color-option.flipped .back {
+  transform: rotateY(0); /* Brings the back face to the front when the card is flipped */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
